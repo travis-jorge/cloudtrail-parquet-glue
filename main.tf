@@ -1,7 +1,3 @@
-provider "aws" {
-  region = var.region
-}
-
 resource "aws_s3_bucket_object" "etl_job_script" {
   bucket = replace(var.etl_script_s3_bucket, "s3://", "")
   key    = "glue_etl.py"
